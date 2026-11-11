@@ -15,6 +15,12 @@ AI-Bootcamp/
 │   │   ├── script.js
 │   │   └── assets/
 │   │       └── images/
+│   ├── campus-connect/
+│   │   ├── index.html
+│   │   ├── package.json
+│   │   ├── public/
+│   │   ├── src/
+│   │   └── README.md
 │   └── future-projects/
 └── resources/
 ```
@@ -49,6 +55,41 @@ python3 -m http.server 8080
 ```
 
 Then open `http://localhost:8080` in your browser.
+
+---
+
+### 2. CampusConnect — University Event Discovery & Management Hub (`projects/campus-connect/`)
+
+A centralized college event discovery, registration, and management web application designed with a Royal Minimal University aesthetic (`DM Serif Display` & `Inter`, Midnight Navy `#17243A`, Royal Burgundy `#722F43`, Warm Ivory `#F8F7F3`).
+
+#### Highlights
+- **Student Discovery & Filtering (`/`)**: Real-time keyword search, category pills (`Technology`, `Hackathon`, `Cultural`, `Sports`, `Workshop`, `Career`), sort options, upcoming toggle, and URL-synced filters.
+- **Interactive Monthly Calendar (`CampusCalendarWidget`)**: Timezone-safe monthly grid highlighting scheduled dates with a daily agenda panel.
+- **Event Details & Registration (`/events/:id`)**: Capacity indicators, organizer contact, Google Calendar export, share action, bookmarks, and duplicate-safe simulated registration with pass generation.
+- **My Events & Passes (`/my-events`)**: Manage upcoming demo passes, past concluded archive events, and saved bookmarks with accessible in-app cancellation dialogs.
+- **Admin Management Studio (`/admin`)**: Client-side role-guarded dashboard with live KPIs, full event CRUD + form validation, searchable attendee rosters, CSV export, and cascading deletion cleanup.
+
+#### Technologies
+- **Frontend**: React 18, Vite 6, React Router DOM v6
+- **Styling & Icons**: Tailwind CSS 3 (`DM Serif Display` + `Inter`), Lucide React
+- **Persistence (MVP)**: Browser `localStorage` repository layer (`src/services/storageService.js`)
+
+#### Run Locally
+
+```bash
+cd projects/campus-connect
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+cd projects/campus-connect
+npm run build
+```
+
+See [`projects/campus-connect/README.md`](projects/campus-connect/README.md) for full architecture details, demo mode notes, and roadmap.
 
 ---
 

@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #17243A;
+    --color-burgundy: #722F43;
+    --color-gold: #B69A62;
+    --color-ivory: #F8F7F3;
+    --color-white: #FFFFFF;
+    --color-charcoal: #25282D;
+    --color-slate: #737780;
+    --color-stone: #E8E5DE;
+    --color-success: #52745C;
+    --color-warning: #B58A46;
+    --color-danger: #A34C4C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    color-scheme: light;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-navy);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-[#17243A] hover:bg-[#223452] text-white text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-white hover:bg-[#F8F7F3] text-[#17243A] border border-[#17243A]/25 hover:border-[#17243A] text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-[#722F43] hover:bg-[#5D2435] text-white text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md text-[#737780] hover:text-[#17243A] hover:bg-[#F3F1EA] text-sm font-medium transition-colors duration-150;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-[#FBF2F2] hover:bg-[#F6E4E4] text-[#A34C4C] border border-[#ECD2D2] text-sm font-medium transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply w-full px-3.5 py-2.5 rounded-md bg-white border border-[#E8E5DE] text-sm text-[#25282D] placeholder-[#737780] focus:outline-none focus:border-[#17243A] focus:ring-1 focus:ring-[#17243A] transition-colors duration-150;
+  }
+
+  .card-surface {
+    @apply bg-white border border-[#E8E5DE] rounded-xl shadow-card;
+  }
+}
+
+/* Subtle warm stone scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F7F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5D0C5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B6AEA0;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
